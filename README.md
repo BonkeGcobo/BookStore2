@@ -1,3 +1,64 @@
+
+# BookStrore
+
+> This is a bookstore web application, created using react, react-redux and router. Purpose of this project is to upskill the developer with react and advanced react.
+
+
+## Built With
+
+- HTML, CSS AND JAVASCRIPT
+- REACT
+- VSCODE, REDUX
+
+## Live Demo (if available)
+
+
+
+
+## Getting Started
+
+To get a local copy up and running follow these simple example steps.
+
+### Prerequisites
+
+1) Internet connection
+2) git and git-hub
+
+### Setup
+
+1) git clone https://github.com/BonkeGcobo/BookStore2.git
+2) cd bookstore
+3) To open server, npm start
+4) To see code, open your favorite code editor
+
+### Install
+
+1) npm install
+
+## Authors
+
+👤 **Bonke Gcobo**
+
+- GitHub: [@githubhandle](https://github.com/BonkeGcobo)
+- Twitter: [@twitterhandle](https://twitter.com/bonkegcobo)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/bonkegcobo)
+
+
+## Linters
+
+
+**stylelint**
+
+1) run `npx stylelint "**/*.{css,scss}" `  to fix stylint errors
+2) run `npx stylelint "**/*.{css,scss}" --fix` to fix all of linters
+
+
+**eslint**
+
+1) run `npx eslint .` "to see the eslint errors"
+2) run `npx eslint . -- fix`  "to fix linters"
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
