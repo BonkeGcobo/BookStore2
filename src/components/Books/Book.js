@@ -1,13 +1,21 @@
 import PropTypes from 'prop-types';
+import React from 'react';
 
 const Book = (props) => {
   const { name, author } = props;
 
   return (
-    <div className="book">
-      {name}
-      {author}
-    </div>
+    <>
+      <div className="book">
+        <p className="bookTitle">{name}</p>
+        <p className="bookAuthor">{author}</p>
+
+        <button type="button">
+          Delete
+        </button>
+      </div>
+    </>
+
   );
 };
 

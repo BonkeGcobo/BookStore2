@@ -1,7 +1,7 @@
 function Category() {
   return (
     <div>
-      <h1>Coming Soon</h1>
+      <button type="submit">Check Status</button>
     </div>
   );
 }
