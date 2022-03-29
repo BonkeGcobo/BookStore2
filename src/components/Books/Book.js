@@ -1,8 +1,12 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import { useDispatch } from 'react-redux';
+import removeBook from '../../redux/books/books';
+
 
 const Book = (props) => {
-  const { name, author } = props;
+  const {id, name, author } = props;
+  const dispatch = useDispatch();
 
   return (
     <>
