@@ -1,19 +1,19 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
-import addBook from '../../redux/books/books';
+import { addBook } from '../../redux/books/books';
 
 const AddBook = () => {
   const dispatch = useDispatch(); // used to ignite action on redux
   const [author, setAuthor] = useState('');
-  const [bookTitle, setTitle] = useState('');
+  const [title, setTitle] = useState('');
 
   const AddNewBook = (e) => {
     e.preventDefault();
     const newBook = {
       id: uuidv4(),
       author,
-      bookTitle,
+      title,
     };
     dispatch(addBook(newBook)); // dispatch to redux
     setAuthor('');

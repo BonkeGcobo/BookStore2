@@ -6,18 +6,18 @@ const REMOVE_BOOK = 'bookStore/books/REMOVE_BOOK';
 const initialState = [];
 
 // Export action creators which returns an actions
-const addBook = (payload) => ({
+export const addBook = (payload) => ({
   type: ADD_BOOK,
   payload,
 });
 
-const removeBook = (payload) => ({
+export const removeBook = (payload) => ({
   type: REMOVE_BOOK,
   payload,
 });
 
 // In a reducer don't use the state in the redux
-const bookReducer = (state = initialState, action) => {
+const booksreducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_BOOK:
       return [...state, action.payload];
@@ -30,4 +30,4 @@ const bookReducer = (state = initialState, action) => {
   }
 };
 
-export default { bookReducer, removeBook, addBook };
+export default booksreducer;

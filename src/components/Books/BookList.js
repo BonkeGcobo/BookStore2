@@ -2,14 +2,14 @@ import { useSelector } from 'react-redux';
 import Book from './Book';
 
 const BookList = () => {
-  const bookArray = [
-    { id: 1, title: 'Born a crime', author: 'Trevor Noah' },
-    { id: 2, title: 'The Good Spice', author: 'Madix' },
-  ];
+  const bookArray = useSelector((state) => state.booksReducer);
 
   return (
     <div>
-      {bookArray.map((book) => (<Book key={book.id} name={book.title} author={book.author} />))}
+      {bookArray.map((book) => {
+        const { id, author, title } = book;
+        return (<Book key={id} id={id} name={author} title={title} />);
+      })}
     </div>
   );
 };
