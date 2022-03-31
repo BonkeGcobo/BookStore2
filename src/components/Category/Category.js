@@ -3,10 +3,11 @@ import { checkStatus } from '../../redux/categories/categories';
 
 function Category() {
   const dispatch = useDispatch();
-  dispatch(checkStatus());
+  const actionObj = dispatch(checkStatus());
   return (
     <div>
-      <button type="submit">Check Status</button>
+      <h1>{actionObj.text}</h1>
+      <button type="button">Check Status</button>
     </div>
   );
 }
