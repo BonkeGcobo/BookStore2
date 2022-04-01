@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
-import { addBook } from '../../redux/books/books';
+import { addBooktoServer } from '../../redux/books/books';
 
 const AddBook = () => {
   const dispatch = useDispatch(); // used to ignite action on redux
@@ -11,11 +11,12 @@ const AddBook = () => {
   const AddNewBook = (e) => {
     e.preventDefault();
     const newBook = {
-      id: uuidv4(),
-      author,
+      item_id: uuidv4(),
       title,
+      author,
+      category: 'Fiction',
     };
-    dispatch(addBook(newBook)); // dispatch to redux
+    dispatch(addBooktoServer(newBook)); // dispatch to redux
     setAuthor('');
     setTitle('');
   };
