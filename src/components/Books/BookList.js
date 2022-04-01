@@ -4,11 +4,11 @@ import { fetchBooksFromServer } from '../../redux/books/books';
 import Book from './Book';
 
 const BookList = () => {
-  const bookArray = useSelector((state) => state.booksReducer);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchBooksFromServer());
   });
+  const bookArray = useSelector((state) => state.booksReducer);
 
   return (
     <div>

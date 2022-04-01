@@ -37,8 +37,11 @@ export const addBooktoServer = (bookObj) => async (dispatch) => {
 
 export const fetchBooksFromServer = () => async (dispatch) => {
   const books = await axios.get(baseUrl + AuthenID);
-  console.log(books);
-  dispatch(fetchBooks(books));
+  const mapBooks = Object.entries(books.data).map(([id, book]) => {
+    const { category, title } = book[0];
+    return { id, category, title };
+  });
+  dispatch(fetchBooks(mapBooks));
 };
 
 // In a reducer don't use the state in the redux
@@ -49,6 +52,9 @@ const booksreducer = (state = initialState, action) => {
 
     case REMOVE_BOOK:
       return state.filter((book) => book.id !== action.payload);
+
+    case FETCH_BOOKS:
+      return action.payload;
 
     default:
       return state;
