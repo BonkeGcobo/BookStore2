@@ -45,7 +45,7 @@ export const fetchBooksFromServer = () => async (dispatch) => {
 };
 
 export const deleteBook = (id) => async (dispatch) => {
-  await axios.delete(baseUrl + AuthenID + id);
+  await axios.delete(`${baseUrl + AuthenID}${id}`);
   dispatch(removeBook(id));
 };
 

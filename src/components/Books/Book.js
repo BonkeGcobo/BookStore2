@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { deleteBook } from '../../redux/books/books';
+import ProgressBar from './ProgressBar';
 
 const Book = (props) => {
   const { id, name, title } = props;
@@ -13,16 +14,20 @@ const Book = (props) => {
 
   return (
     <>
-      <div className="book">
-        <p className="bookTitle">{name}</p>
-        <p className="bookAuthor">{title}</p>
+      <div id={id} className="bookCard">
+        <div className="BookDetails">
+          <p className="category-sec">{name}</p>
+          <h3>{title}</h3>
 
-        <button type="submit" onClick={() => deleteBookHandler(id)}>
-          Delete
-        </button>
+          <div className="theButtons">
+            <button type="button" className="theBtns">Comments</button>
+            <button type="button" className="theBtns delete" onClick={() => deleteBookHandler(id)}>Delete</button>
+            <button type="button" className="theBtns">Edit</button>
+          </div>
+        </div>
+        <ProgressBar />
       </div>
     </>
-
   );
 };
 

@@ -11,7 +11,7 @@ const BookList = () => {
   }, []);
 
   return (
-    <div>
+    <div className="bookList">
       {bookArray.map((book) => {
         const { id, author, title } = book;
         return (<Book key={id} id={id} name={author} title={title} />);
