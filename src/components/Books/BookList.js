@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchBooksFromServer } from '../../redux/books/books';
 import Book from './Book';
@@ -5,7 +6,10 @@ import Book from './Book';
 const BookList = () => {
   const bookArray = useSelector((state) => state.booksReducer);
   const dispatch = useDispatch();
-  dispatch(fetchBooksFromServer());
+  useEffect(() => {
+    dispatch(fetchBooksFromServer());
+  });
+
   return (
     <div>
       {bookArray.map((book) => {

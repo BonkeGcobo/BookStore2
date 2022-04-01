@@ -5,7 +5,7 @@ const ADD_BOOK = 'bookStore/books/ADD_BOOK';
 const REMOVE_BOOK = 'bookStore/books/REMOVE_BOOK';
 const FETCH_BOOKS = 'bookStore/books/FETCH_BOOKS';
 
-//For API calls
+// For API calls
 const baseUrl = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/';
 const AuthenID = 'RpgQNvoFG8rdrlonQoge/books/';
 
@@ -28,9 +28,17 @@ export const fetchBooks = (payload) => ({
   payload,
 });
 
+export const addBooktoServer = (bookObj) => async (dispatch) => {
+  const book = await axios.post(baseUrl + AuthenID, {
+    ...bookObj,
+  });
+  dispatch(addBook(book));
+};
+
 export const fetchBooksFromServer = () => async (dispatch) => {
   const books = await axios.get(baseUrl + AuthenID);
   console.log(books);
+  dispatch(fetchBooks(books));
 };
 
 // In a reducer don't use the state in the redux
