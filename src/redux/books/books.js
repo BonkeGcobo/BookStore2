@@ -29,10 +29,10 @@ export const fetchBooks = (payload) => ({
 });
 
 export const addBooktoServer = (bookObj) => async (dispatch) => {
-  const book = await axios.post(baseUrl + AuthenID, {
+  await axios.post(baseUrl + AuthenID, {
     ...bookObj,
   });
-  dispatch(addBook(book));
+  dispatch(addBook(bookObj));
 };
 
 export const fetchBooksFromServer = () => async (dispatch) => {
@@ -42,6 +42,11 @@ export const fetchBooksFromServer = () => async (dispatch) => {
     return { id, category, title };
   });
   dispatch(fetchBooks(mapBooks));
+};
+
+export const deleteBook = (id) => async (dispatch) => {
+  await axios.delete(baseUrl + AuthenID + id);
+  dispatch(removeBook(id));
 };
 
 // In a reducer don't use the state in the redux
