@@ -1,3 +1,5 @@
+/* eslint-disable camelcase */
+/* eslint-disable no-undef */
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchBooksFromServer } from '../../redux/books/books';
@@ -11,10 +13,10 @@ const BookList = () => {
   }, []);
 
   return (
-    <div>
+    <div className="bookList">
       {bookArray.map((book) => {
-        const { id, author, title } = book;
-        return (<Book key={id} id={id} name={author} title={title} />);
+        const { item_id, category, title } = book;
+        return (<Book key={item_id} item_id={item_id} category={category} title={title} />);
       })}
     </div>
   );

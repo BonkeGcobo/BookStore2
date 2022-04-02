@@ -7,7 +7,7 @@ const FETCH_BOOKS = 'bookStore/books/FETCH_BOOKS';
 
 // For API calls
 const baseUrl = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/';
-const AuthenID = 'RpgQNvoFG8rdrlonQoge/books/';
+const AuthenID = '2WYDia0uF0Kvz5cTeCz9/books/';
 
 // Setting an intialState
 const initialState = [];
@@ -56,7 +56,7 @@ const booksreducer = (state = initialState, action) => {
       return [...state, action.payload];
 
     case REMOVE_BOOK:
-      return state.filter((book) => book.id !== action.payload);
+      return state.filter((book) => book.item_id !== action.payload);
 
     case FETCH_BOOKS:
       return action.payload;
