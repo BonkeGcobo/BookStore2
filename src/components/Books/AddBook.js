@@ -5,16 +5,18 @@ import { addBooktoServer } from '../../redux/books/books';
 
 const AddBook = () => {
   const dispatch = useDispatch(); // used to ignite action on redux
-  const [bookTitle, setTitle] = useState('');
+  const [title, setTitle] = useState('');
   const [category, setCategory] = useState('');
 
   const AddNewBook = (e) => {
     e.preventDefault();
     const newBook = {
       item_id: uuidv4(),
-      bookTitle,
+      title,
+      author: 'Bonke',
       category,
     };
+    // console.log(newBook);
     dispatch(addBooktoServer(newBook)); // dispatch to redux
     setTitle('');
     setCategory('');

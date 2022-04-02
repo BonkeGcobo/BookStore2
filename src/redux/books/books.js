@@ -7,7 +7,7 @@ const FETCH_BOOKS = 'bookStore/books/FETCH_BOOKS';
 
 // For API calls
 const baseUrl = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/';
-const AuthenID = 'RpgQNvoFG8rdrlonQoge/books/';
+const AuthenID = '2WYDia0uF0Kvz5cTeCz9/books/';
 
 // Setting an intialState
 const initialState = [];
@@ -45,7 +45,7 @@ export const fetchBooksFromServer = () => async (dispatch) => {
 };
 
 export const deleteBook = (id) => async (dispatch) => {
-  await axios.delete(`${baseUrl + AuthenID}${id}`);
+  await axios.delete(baseUrl + AuthenID + id);
   dispatch(removeBook(id));
 };
 
