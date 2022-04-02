@@ -5,7 +5,7 @@ import { deleteBook } from '../../redux/books/books';
 import ProgressBar from './ProgressBar';
 
 const Book = (props) => {
-  const { id, name, title } = props;
+  const { id, category, title } = props;
   const dispatch = useDispatch();
 
   const deleteBookHandler = (id) => {
@@ -16,7 +16,7 @@ const Book = (props) => {
     <>
       <div id={id} className="bookCard">
         <div className="BookDetails">
-          <p className="category-sec">{name}</p>
+          <p className="category-sec">{category}</p>
           <h3>{title}</h3>
 
           <div className="theButtons">
@@ -35,6 +35,6 @@ export default Book;
 // Here we are defining the props that we are expecting
 Book.propTypes = {
   id: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
+  category: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
 };

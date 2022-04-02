@@ -105,7 +105,11 @@ body {
 }
 
 .theForm {
-  margin: 0.5rem 4rem;
+  margin-bottom: 3rem;
+  margin-right: 4rem;
+  margin-left: 4rem;
+  position: sticky;
+  height: 40%;
 }
 
 .formTitle {
@@ -125,8 +129,23 @@ body {
   color: #ffff;
   padding-left: 1rem;
   padding-right: 1rem;
+  width: 30%;
+}
+
+.category {
+  width: 30%;
 }
 
 .bookList {
-  margin-bottom: 2rem;
+  height: 60%;
+  overflow-y: scroll;
+}
+
+.bookTitle {
+  width: 60%;
+}
+
+.bookPage {
+  display: flex;
+  flex-direction: column
 }
