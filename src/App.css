@@ -8,8 +8,9 @@
 .nav {
   list-style: none;
   display: flex;
-  justify-content: space-between;
+  gap: 25px;
   width: 35%;
+  margin-right: 7rem;
 }
 
 body {
@@ -30,6 +31,7 @@ body {
   border: 1px solid #e8e8e8;
   border-radius: 100%;
   padding: 1rem;
+  margin-right: 2rem;
 }
 
 .theHeader {
